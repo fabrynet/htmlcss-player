@@ -10,22 +10,73 @@ body {
   background-color: #1e2d3c;
 }
 
-/* stili per il player */
-.player {
+/* stili per il wrapper */
+.wrapper {
   position: relative;
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
-  width: 700px;
+  width: 900px;
   height: 500px;
+  background-color: white;
+  border: 1px solid black;
+}
+/* clearfix per il wrapper e i video suggeriti */
+.wrapper:after, .suggested {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* stili per il player */
+.player {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 70%;
+  height: 100%;
+  float: left;
 }
 .player .video {
   width: 100%;
   height: 100%;
 }
 
+/* stili per suggestions */
+#suggestions {
+  float: right;
+  width: 30%;
+  height: 100%;
+  /* debug */
+  /* background-color: yellow; */
+}
+.suggestions-title {
+  font-size: 25px;
+  padding: 5px;
+}
+.suggested {
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+}
+.suggested:hover {
+  cursor: pointer;
+}
+.suggested .thumb {
+  width: 50%;
+  float: left;
+}
+.suggested .thumb img{
+  width:100%;
+}
+.suggested .title {
+  width: 50%;
+  float: right;
+  font-size: 18px;
+  padding: 5px;
+}
+
 /* stili per la barra dei comandi */
-.command-bar {
+.toolbar {
   position: absolute;
   width: 100%;
   height: 80px;
@@ -49,4 +100,7 @@ body {
 .player:hover .layover {
   transition: opacity 0.5s;
   opacity: 1;
+}
+.toolbar:hover {
+  cursor: pointer;
 }
